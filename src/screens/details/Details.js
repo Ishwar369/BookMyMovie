@@ -11,8 +11,6 @@ import { Link } from 'react-router-dom';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 const Details = (props) => {
-
-
     const [movie, setMovie] = useState({
         genres: [],
         trailer_url: "",
@@ -50,8 +48,6 @@ const Details = (props) => {
         stateId: "star5",
         color: "black"
     }]);
-
-
 
     useEffect(() => {
         let dataMovie = null;

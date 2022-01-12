@@ -51,8 +51,6 @@ const styles = theme => ({
 
 
 const Home = (props) => {
-
-
     const [movieName, setMovieName] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [isReleaseMoviesLoading, setIsReleaseMoviesLoading] = useState(false);
@@ -67,8 +65,7 @@ const Home = (props) => {
 
 
     useEffect(() => {
-
-        // Fetching PUBLISHED movies
+        // Fetching movies with status PUBLISHED
         let data = null;
         setIsLoading(true);
         fetch(props.baseUrl + "movies?status=PUBLISHED", {
@@ -85,11 +82,8 @@ const Home = (props) => {
                 setIsLoading(false);
             })
 
-        // Fetching RELEASED movies
-
         let dataReleased = null;
-
-
+        // Fetching movies with status RELEASED
         fetch(props.baseUrl + "movies?status=RELEASED", {
             method: "GET",
             headers: {
@@ -140,9 +134,6 @@ const Home = (props) => {
             });
     }, []);
 
-
-
-
     const movieNameChangeHandler = event => {
         setMovieName(event.target.value);
     }
@@ -163,7 +154,7 @@ const Home = (props) => {
         setReleaseDateEnd(event.target.value);
     }
 
-    // Find moives filter handler
+    // Find movies filter - handler
     const movieClickHandler = (movieId) => {
         props.history.push('/movie/' + movieId);
     }

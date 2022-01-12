@@ -160,8 +160,6 @@ class Header extends Component {
             });
     }
 
-    
-
     inputFirstNameChangeHandler = (e) => {
         this.setState({ firstname: e.target.value });
     }
